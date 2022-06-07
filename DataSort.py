@@ -10,9 +10,6 @@
 #Score: Score_list[1]
 #=================
 
-Process finished with exit code 0
-
-
 #Imports
 import sys
 #Functions
