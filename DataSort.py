@@ -62,8 +62,8 @@ for i in range(Amt):
                                 print('Invalid Input,please enter a score')
     Skip = ''#resets loop breaker for next student
 #prints the data collected above
-print(17*'=')
 try:
+    print(17*'=')
     for i in range(Amt):
         print('Student:', Name_list[0], '\nID:', Id_list[0], '\nScore:', Score_list[0])
         del(Name_list[0],Id_list[0],Score_list[0])
