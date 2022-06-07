@@ -1,3 +1,18 @@
+#This program asks the user(teacher) for the amount of students and their Name(s),ID(s),Score(s) and prints them in the format below
+#Eg(2 students)
+#=================
+#Student: Name_list[0] 
+#ID: Id_list[0]
+#Score: Score_list[0]
+#=================
+#Student: Name_list[1] 
+#ID: Id_list[1]
+#Score: Score_list[1]
+#=================
+
+Process finished with exit code 0
+
+
 #Imports
 import sys
 #Functions
@@ -53,7 +68,7 @@ for i in range(Amt):
 print(17*'=')
 try:
     for i in range(Amt):
-        print('Student:', Name_list[0], '\nID:', Id_list[0], '\nScored:', Score_list[0])
+        print('Student:', Name_list[0], '\nID:', Id_list[0], '\nScore:', Score_list[0])
         del(Name_list[0],Id_list[0],Score_list[0])
         print(17*'=')
     sys.exit()
