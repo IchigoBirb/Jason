@@ -1,0 +1,33 @@
+#This program helps to calculate the commission you should receive (2dp)
+#Eg(10% commission rate and sales $16000
+#Type 'Skip' to skip else enter any key
+#.
+#How many sales have you made? ($)
+#16000
+#What is your commission rate? (%)
+#10
+#Your commision is $1600.00
+
+#Imports(Nil)
+#Functions
+def main():
+    Skip = input('Type \'Skip\' to skip else enter any key\n')
+    while Skip != 'Skip':
+        Sales = input('How many sales have you made? ($)\n')
+        try:
+            Sales_float = float(Sales)
+            Commission_rate = input('What is your commission rate? (%)\n')
+            while Skip != 'Skip':
+                try:
+                    Commision_rate_float = float(Commission_rate)
+                    Commision = (Commision_rate_float * (Sales_float / 100))
+                    print('Your commision is ${:.2f}'.format(Commision))
+                    Skip = 'Skip'
+                except:
+                    print('Invalid response')
+                    continue
+        except:
+            print('Invalid response')
+            continue
+#Defining global variables/lists/dictionaries(Nil)
+main()
