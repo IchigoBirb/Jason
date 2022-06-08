@@ -1,4 +1,7 @@
-
+#This program asks the user to enter their user number/name and 
+#retrieves data from a nested dictionary to show their Results for the 3 subjects 
+#as well as everyone's average score and the entire class average for the 3 subjects
+#Eg(3/Jerome) 
 #Valid users 
 #1) Jane 
 #2) John 
