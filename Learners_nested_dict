@@ -1,0 +1,108 @@
+
+#Valid users 
+#1) Jane 
+#2) John 
+#3) Jerome 
+#4) Jason 
+#5) Jessica 
+#6) Joanne
+#Enter learner name to query:
+#3
+#Jerome              
+#=========================
+#Results for English: 81
+#Results for Math:    63
+#Results for Science: 77
+#=========================
+#Average marks of Jane : 80.00     
+#Average marks of John : 67.33     
+#Average marks of Jerome : 73.67     
+#Average marks of Jason : 66.00     
+#Average marks of Jessica : 58.33     
+#Average marks of Joanne : 50.00     
+#========================================
+#Average results for English: 64.17     
+#Average results for Math:    63.17     
+#Average results for Science: 70.33     
+#========================================
+
+
+
+
+#Imports(Nil)
+#Functions
+def learner_result(name):
+  print("{:<20s}".format(name))
+  print(25*'=')
+  print('Results for English: ',end='')
+  print("{:>2d}".format(learners_nested_dict.get(name).get('English')))
+  print('Results for Math: ',end='')
+  print("{:>5d}".format(learners_nested_dict.get(name).get('Math')))
+  print('Results for Science: ',end='')
+  print("{:>2d}".format(learners_nested_dict.get(name).get('Science')))
+  print(25*'=')
+def average_calc(name):
+  English = (learners_nested_dict.get(name).get('English'))
+  English_list.insert(1,English)
+  Math = (learners_nested_dict.get(name).get('Math'))
+  Math_list.insert(1,Math)
+  Science = (learners_nested_dict.get(name).get('Science'))
+  Science_list.insert(1,Science)
+  Average = ((English+Math+Science)/3)
+  print(Avg_marks,User_list[0],':',"{:<10.2f}".format(Average))
+  del(User_list[0])
+def average_calc_combiner():
+    average_calc('Jane')
+    average_calc('John')
+    average_calc('Jerome')
+    average_calc('Jason')
+    average_calc('Jessica')
+    average_calc('Joanne')
+#Defining global variables/lists/dictionaries
+English = 0;Math = 0;Science = 0
+English_list = [0]
+Math_list = [0]
+Science_list = [0]
+learners_nested_dict = {'Jane':{'English':75,'Math':80,'Science':85},
+                        'John':{'English':60,'Math':68,'Science':74},
+                        'Jerome':{'English':81,'Math':63,'Science':77},
+                        'Jason':{'English':55,'Math':76,'Science':67},
+                        'Jessica':{'English':62,'Math':45,'Science':68},
+                        'Joanne':{'English':52,'Math':47,'Science':51}}
+User_list = ['Jane','John','Jerome','Jason','Jessica','Joanne']
+print('Valid users','\n1) Jane','\n2) John','\n3) Jerome','\n4) Jason','\n5) Jessica','\n6) Joanne')
+while True:
+    user_inquiry = input('Enter learner name to query:\n')
+    if user_inquiry == '1' or user_inquiry == 'Jane':
+        user_inquiry = 'Jane'
+        break
+    elif user_inquiry == '2'or user_inquiry == 'John':
+        user_inquiry = 'John'
+        break
+    elif user_inquiry == '3'or user_inquiry == 'Jerome':
+        user_inquiry = 'Jerome'
+        break
+    elif user_inquiry == '4'or user_inquiry == 'Jason':
+        user_inquiry = 'Jason'
+        break
+    elif user_inquiry == '5'or user_inquiry == 'Jessica':
+        user_inquiry = 'Jessica'
+        break
+    elif user_inquiry == '6'or user_inquiry == 'Joanne':
+        user_inquiry = 'Joanne'
+        break
+    else:
+        print('Invalid user please type a value between 1-6 or the user\'s name.')
+        continue
+try:
+    if user_inquiry in User_list:
+        learner_result(user_inquiry)
+        Avg_marks = ('Average marks of')
+        average_calc_combiner()
+        print(40 * "=")
+        print('Average results for English:', "{:<10.2f}".format(sum(English_list) / 6))
+        print('Average results for Math:   ', "{:<10.2f}".format(sum(Math_list) / 6))
+        print('Average results for Science:', "{:<10.2f}".format(sum(Science_list) / 6))
+        print(40 * "=")
+except:
+    pass
