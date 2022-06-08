@@ -1,0 +1,194 @@
+#Easter egg the Correct_ans_list will be different if the user typed in an error(not A/B/C/D)
+#and if the user type in more than 10 errors they get 0 marks
+#This program asks the user to answer 10 different mcq qns(randomly generated)
+#and allows unlimited attempts and takes their best score
+
+#Snippet of last part
+#Q10) What is the sum of 36 and 56 ?
+#Option A) 142
+#Option B) 102
+#Option C) 92
+#Option D) 133
+#Type Option A/a/B/b/C/c/D/d
+#d
+#You got 3 correct but 7 wrong
+#Your highest score is 3
+#Try Again?(Y/N)N
+
+
+#Imports
+import random,sys
+#Functions
+def main():
+  while True:
+    errors = 0
+    Amt_of_qn = 10
+    Correct_marks = 0
+    wrong_marks = 0
+    loop = 0
+    Try_again = ''
+    Correct_ans_list = ['C', 'D', 'B', 'A', 'B', 'D', 'A', 'C', 'D', 'C']
+    for i in range(Amt_of_qn):
+      a = random.randint(20, 100)
+      b = random.randint(20, 100)
+      loop += 1
+      print('Q', end='')
+      print(loop, end='')
+      print(') What is the sum of', a, 'and', b, '?')
+      if Correct_ans_list[0] == 'A':
+        print('Option A)', a + b)
+        print('Option B)', random.randint(40, 150))
+        print('Option C)', random.randint(40, 150))
+        print('Option D)', random.randint(40, 150))
+        Option = input('Type Option A/a/B/b/C/c/D/d\n')
+        if Option == 'A' or Option == 'a':
+          Correct_marks += 1
+        elif Option == 'B' or Option == 'b' or Option == 'C' or Option == 'c' or Option == 'D' or Option == 'd':
+          wrong_marks += 1
+        else:
+          loop -= 1
+          errors += 1
+          continue
+      elif Correct_ans_list[0] == 'B':
+        print('Option A)', random.randint(40, 150))
+        print('Option B)', a + b)
+        print('Option C)', random.randint(40, 150))
+        print('Option D)', random.randint(40, 150))
+        Option = input('Type Option A/a/B/b/C/c/D/d\n')
+        if Option == 'B' or Option == 'b':
+          Correct_marks += 1
+        elif Option == 'A' or Option == 'a' or Option == 'C' or Option == 'c' or Option == 'D' or Option == 'd':
+          wrong_marks += 1
+        else:
+          loop -= 1
+          errors += 1
+          continue
+      elif Correct_ans_list[0] == 'C':
+        print('Option A)', random.randint(40, 150))
+        print('Option B)', random.randint(40, 150))
+        print('Option C)', a + b)
+        print('Option D)', random.randint(40, 150))
+        Option = input('Type Option A/a/B/b/C/c/D/d\n')
+        if Option == 'C' or Option == 'c':
+          Correct_marks += 1
+        elif Option == 'A' or Option == 'a' or Option == 'B' or Option == 'b' or Option == 'D' or Option == 'd':
+          wrong_marks += 1
+        else:
+          loop -= 1
+          errors += 1
+          continue
+      else:
+        print('Option A)', random.randint(40, 150))
+        print('Option B)', random.randint(40, 150))
+        print('Option C)', random.randint(40, 150))
+        print('Option D)', a + b)
+        Option = input('Type Option A/a/B/b/C/c/D/d\n')
+        if Option == 'D' or Option == 'd':
+          Correct_marks += 1
+        elif Option == 'A' or Option == 'a' or Option == 'C' or Option == 'c' or Option == 'B' or Option == 'b':
+          wrong_marks += 1
+        else:
+          loop -= 1
+          errors += 1
+          continue
+      del (Correct_ans_list[0])
+    errors_function(errors,loop,Correct_marks,wrong_marks)
+    print('You got', Correct_marks, 'correct but', wrong_marks, 'wrong')
+    Highest_score_list.append(Correct_marks)
+    Highest_score_list.sort()
+    print('Your highest score is', Highest_score_list[-1])
+    while Try_again != 'Y':
+      Try_again = input('Try Again?(Y/N)')
+      if Try_again == 'Y':
+        continue
+      elif Try_again == 'N':
+        sys.exit()
+      else:
+        print('Invalid Response')
+        continue
+def errors_function(errors,loop,Correct_marks,wrong_marks):
+  while True:
+    Try_again = ''
+    Correct_ans_list = ['C', 'D', 'B', 'A', 'B', 'D', 'A', 'C', 'D', 'C']
+    for i in range(errors):
+      a = random.randint(20, 100)
+      b = random.randint(20, 100)
+      loop += 1
+      print('Q', end='')
+      print(loop, end='')
+      print(') What is the sum of', a, 'and', b, '?')
+      if Correct_ans_list[0] == 'A':
+        print('Option A)', a + b)
+        print('Option B)', random.randint(40, 150))
+        print('Option C)', random.randint(40, 150))
+        print('Option D)', random.randint(40, 150))
+        Option = input('Type Option A/a/B/b/C/c/D/d\n')
+        if Option == 'A' or Option == 'a':
+          Correct_marks += 1
+        elif Option == 'B' or Option == 'b' or Option == 'C' or Option == 'c' or Option == 'D' or Option == 'd':
+          wrong_marks += 1
+        else:
+          loop -= 1
+          continue
+      elif Correct_ans_list[0] == 'B':
+        print('Option A)', random.randint(40, 150))
+        print('Option B)', a + b)
+        print('Option C)', random.randint(40, 150))
+        print('Option D)', random.randint(40, 150))
+        Option = input('Type Option A/a/B/b/C/c/D/d\n')
+        if Option == 'B' or Option == 'b':
+          Correct_marks += 1
+        elif Option == 'A' or Option == 'a' or Option == 'C' or Option == 'c' or Option == 'D' or Option == 'd':
+          wrong_marks += 1
+        else:
+          loop -= 1
+          continue
+      elif Correct_ans_list[0] == 'C':
+        print('Option A)', random.randint(40, 150))
+        print('Option B)', random.randint(40, 150))
+        print('Option C)', a + b)
+        print('Option D)', random.randint(40, 150))
+        Option = input('Type Option A/a/B/b/C/c/D/d\n')
+        if Option == 'C' or Option == 'c':
+          Correct_marks += 1
+        elif Option == 'A' or Option == 'a' or Option == 'B' or Option == 'b' or Option == 'D' or Option == 'd':
+          wrong_marks += 1
+        else:
+          loop -= 1
+          continue
+      else:
+        print('Option A)', random.randint(40, 150))
+        print('Option B)', random.randint(40, 150))
+        print('Option C)', random.randint(40, 150))
+        print('Option D)', a + b)
+        Option = input('Type Option A/a/B/b/C/c/D/d\n')
+        if Option == 'D' or Option == 'd':
+          Correct_marks += 1
+        elif Option == 'A' or Option == 'a' or Option == 'C' or Option == 'c' or Option == 'B' or Option == 'b':
+          wrong_marks += 1
+        else:
+          loop -= 1
+          continue
+      del (Correct_ans_list[0])
+    print('You got', Correct_marks, 'correct but', wrong_marks, 'wrong')
+    Highest_score_list.append(Correct_marks)
+    Highest_score_list.sort()
+    print('Your highest score is', Highest_score_list[-1])
+    while Try_again != 'Y':
+      Try_again = input('Try Again?(Y/N)')
+      if Try_again == 'Y':
+        continue
+      elif Try_again == 'N':
+        sys.exit()
+      else:
+        print('Invalid Response')
+        continue
+#Defining global variables/lists/dictionaries
+Correct_marks = 0
+wrong_marks = 0
+loop = 0
+Highest_score_list = []
+Correct_ans_list = ['C','D','B','A','B','D','A','C','D','C']
+Amt_of_qn = len(Correct_ans_list)
+
+main()
