@@ -1,7 +1,7 @@
 - Hi, I’m @IchigoBirb
 - I started coding in Dec 2021
 - My experience in coding so far is the basics of python (Poly Year 1 level)
-- I’m currently learning python (pyautoGUI,Time)
+- I’m currently learning python (pyautoGUI,schedule)
 - I plan on learning (Soundmeter)
 - How to reach me (Contact through whatsapp +65 8949 4839[Singapore])
 
