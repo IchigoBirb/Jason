@@ -1,7 +1,7 @@
 - Hi, I’m @IchigoBirb
 - I started coding in Dec 2021
 - My experience in coding so far is the basics of python (Poly Year 1 level)
-- I’m currently learning python (pyautoGUI,schedule)
+- I’m currently learning python (opencv)
 - I plan on learning (Soundmeter)
 - How to reach me (Contact through whatsapp +65 8949 4839[Singapore])
 
@@ -27,8 +27,6 @@ https://hellmuthbroda.com/2011/11/25/how-to-use-google-search-more-effectively-i
 
 - Imports my song list from youtube and shuffles them,and auto set the volume depending on 
 whether the song is soft or loud to a [soft/medium/loud] volume (Use soundmeter to determine decibals)
-
-- Auto screen record zoom meeting at a scheduled time
 
 
 
