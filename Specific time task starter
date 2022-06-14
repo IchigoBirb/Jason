@@ -17,11 +17,12 @@
 #Task ended,closing program
 
 
-
+#Imports
 import pyautogui,time
 from datetime import datetime
-
-
+#Functions(NIL)
+#Defining global variables/lists/dictionaries
+Start_countdown = 3
 while True:
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
@@ -32,7 +33,6 @@ while True:
         break
     except ValueError:
         print("Please enter valid time format!")
-Start_countdown = 3
 for i in range(Start_countdown):
     print(Start_countdown)
     Start_countdown -= 1
