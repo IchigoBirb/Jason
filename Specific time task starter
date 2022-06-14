@@ -1,0 +1,52 @@
+#Easter egg if you type the current time(First display) it starts the task although by the time the program runs the time passed so it also prints that the time passed
+#If the user does not type in HH:MM:SS and instead types in for eg H:M:S the program would start this idk how solve maybe in the future(i tried using text.replace('1','01',3)
+
+#Current Time = 18:35:14
+#What time to start?(Format:'HH:MM:SS')
+#18:35:20
+#3
+#2
+#1
+#Program started!
+#Current Time = 18:35:18
+#Current Time = 18:35:18
+#Current Time = 18:35:19
+#Current Time = 18:35:19
+#Current Time = 18:35:20
+#Task started
+#Task ended,closing program
+
+
+
+import pyautogui,time
+from datetime import datetime
+
+
+while True:
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    print("Current Time =", current_time)
+    Time_start = input('What time to start?(Format:\'HH:MM:SS\')\n')
+    try:
+        time.strptime(Time_start, '%H:%M:%S')
+        break
+    except ValueError:
+        print("Please enter valid time format!")
+Start_countdown = 3
+for i in range(Start_countdown):
+    print(Start_countdown)
+    Start_countdown -= 1
+    time.sleep(1)
+print('Program started!')
+while True:
+    if current_time == Time_start:
+        print('Task started')
+        break
+    elif current_time >= Time_start:
+        print('Time already passed')
+        break
+    else:
+        now = datetime.now()
+        current_time = now.strftime("%H:%M:%S")
+        print("Current Time =", current_time)
+        time.sleep(0.5)
