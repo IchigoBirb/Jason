@@ -1,0 +1,32 @@
+#This program helps you decide which task you should do
+#eg
+#How many choices
+#3
+#What is Choice 1
+#Sleep
+#What is Choice 2
+#Code
+#What is Choice 3
+#cry
+#Rng has decided that you should Code
+
+#Imports
+import random
+#Functions
+def choice_list_thing(number):
+    print('Rng has decided that you should',choice_list[number])
+#Defining global variables/lists/dictionaries
+choice_list = []
+
+while 1:
+    try:
+        choice = int(input('How many choices\n'))
+        break
+    except:
+        continue
+Choices = random.randint(1, choice)
+for i in range(choice):
+    print('What is Choice',i+1)
+    Choice_input = input('')
+    choice_list.append(Choice_input)
+choice_list_thing(Choices-1)
